@@ -1,0 +1,9 @@
+E:\DrivingLicenseManagement\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.dll
+E:\DrivingLicenseManagement\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.pdb
+E:\DrivingLicenseManagement\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.dll
+E:\DrivingLicenseManagement\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\DVLD_Buisness.csproj.AssemblyReference.cache
+E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\DVLD_Buisness.csproj.CoreCompileInputs.cache
+E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\DVLD_Bui.E5CEC4E3.Up2Date
+E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
+E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb

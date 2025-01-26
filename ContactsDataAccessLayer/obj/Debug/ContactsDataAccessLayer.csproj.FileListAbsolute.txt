@@ -1,0 +1,12 @@
+C:\Users\TOP 10\source\repos\DrivingLicenseManagement\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\TOP 10\source\repos\DrivingLicenseManagement\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\TOP 10\source\repos\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\TOP 10\source\repos\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\TOP 10\source\repos\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.dll
+C:\Users\TOP 10\source\repos\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.pdb
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.dll
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.AssemblyReference.cache
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.CoreCompileInputs.cache
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.dll
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.pdb
