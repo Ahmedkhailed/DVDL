@@ -31,11 +31,12 @@ namespace DrivingLicenseManagement
 
                     if (checkBox1.Checked)
                     {
-
                         clsGlobal.RememberUserNameAndPassword(tbUserName.Text.ToString(), tbPassword.Text.ToString());
                     }
                     else
                     {
+                        tbUserName.Text = "";
+                        tbPassword.Text = "";
                         clsGlobal.RememberUserNameAndPassword("", "");
                     }
 
@@ -54,7 +55,7 @@ namespace DrivingLicenseManagement
                 MessageBox.Show("Invalid UserName/Password.", "Wrong credentials", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         private void tbPassword_Enter(object sender, EventArgs e)
         {
             button1_Click(sender, e);

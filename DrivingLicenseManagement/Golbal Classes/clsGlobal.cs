@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 
 namespace DrivingLicenseManagement.Golbal_Classes
 {
@@ -15,25 +16,13 @@ namespace DrivingLicenseManagement.Golbal_Classes
 
         public static bool RememberUserNameAndPassword(string userName, string Password)
         {
+            string keyPath = "HKEY_CURRENT_USER\\Software\\DrivingLicenseManagement";
             try
             {
-                string currentDirectory = Directory.GetCurrentDirectory();
+                Registry.SetValue(keyPath, "Username", userName);
+                Registry.SetValue(keyPath, "Password", Password);
 
-                string filePath = currentDirectory + "\\data.txt";
-
-                if (userName == "" && File.Exists(filePath))
-                {
-                    File.Delete(filePath);
-                    return true;
-                }
-
-                string DataToSave = userName + "#//#" + Password;
-
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-                    writer.WriteLine(DataToSave);
-                    return true;
-                }
+                return true;
             }
             catch (Exception ex)
             {
@@ -44,29 +33,13 @@ namespace DrivingLicenseManagement.Golbal_Classes
 
         public static bool GetStoredCredential(ref string Username, ref string Password)
         {
+            string KetPath = "HKEY_CURRENT_USER\\Software\\DrivingLicenseManagement";
             try
             {
-                string currentDirectory = Directory.GetCurrentDirectory();
+                Username = Registry.GetValue(KetPath, "Username", null) as string;
+                Password = Registry.GetValue(KetPath, "Password", null) as string;
 
-                string filePath = currentDirectory + "\\data.txt";
-
-                if (File.Exists(filePath))
-                {
-                    using (StreamReader reader = new StreamReader(filePath))
-                    {
-                        string line;
-                        while ((line = reader.ReadLine()) != null)
-                        {
-                            Console.WriteLine(line);
-                            string[] resuilt = line.Split(new string[] { "#//#" }, StringSplitOptions.None);
-
-                            Username = resuilt[0];
-                            Password = resuilt[1];
-                        }
-                        return true;
-                    }
-                }
-                return false;
+                return (Username != null && Password != null);
             }
             catch (Exception ex)
             {
