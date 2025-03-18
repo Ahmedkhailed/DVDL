@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactsBusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,13 @@ namespace DrivingLicenseManagement
 {
     public partial class frmAddEditPerson : Form
     {
-        public int PersonID;
+        public int PersonID { get; set; }
+        public clsPerson person { get; set; }
 
         public frmAddEditPerson(int PersonID)
         {
             InitializeComponent();
-
+            this.PersonID = PersonID;
             addEdit1.PersonID = PersonID;
             lbTitle.Text = "Update Person";
 

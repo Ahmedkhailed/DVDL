@@ -57,3 +57,4 @@ E:\DrivingLicenseManagement\DrivingLicenseManagement\obj\Debug\DrivingLicenseMan
 E:\DrivingLicenseManagement\DrivingLicenseManagement\bin\Debug\DrivingLicenseManagement.exe.config
 E:\DrivingLicenseManagement\DrivingLicenseManagement\bin\Debug\DrivingLicenseManagement.pdb
 E:\DrivingLicenseManagement\DrivingLicenseManagement\obj\Debug\DVLD.csproj.Up2Date
+E:\DrivingLicenseManagement\DrivingLicenseManagement\bin\Debug\ContactsDataAccessLayer.dll.config

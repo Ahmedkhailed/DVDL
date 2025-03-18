@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace DrivingLicenseManagement
 {
@@ -90,13 +91,22 @@ namespace DrivingLicenseManagement
             }
         }
 
+        static private string ComputeHash(string input)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(input));
+                return BitConverter.ToString(bytes);
+            }
+        }
+
         private void tbCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(tbCurrentPassword.Text))
             {
                 errorProvider1.SetError(tbCurrentPassword, "Username cannot be blank");
             }
-            else if (_User.Password != tbCurrentPassword.Text)
+            else if (_User.Password != ComputeHash(tbCurrentPassword.Text))
             {
                 errorProvider1.SetError(tbCurrentPassword, "Current cannot be blank");
             }

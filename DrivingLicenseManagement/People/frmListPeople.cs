@@ -16,9 +16,12 @@ namespace DrivingLicenseManagement
 {
     public partial class frmMangePeople : Form
     {
-        private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
+        private DataTable GetPeopleData()
+        {
+            return clsPerson.GetAllPeople().DefaultView.ToTable(false, "PersonID", "NationalNo", "FirstName", "SecondName", "ThirdName", "LastName", "Gendor", "DateOfBirth", "CountryName", "Phone", "Email");
+        }
 
-        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo", "FirstName", "SecondName", "ThirdName", "LastName", "Gendor", "DateOfBirth", "CountryName", "Phone", "Email");
+        private DataTable _dtPeople;
 
         public frmMangePeople()
         {
@@ -83,28 +86,28 @@ namespace DrivingLicenseManagement
         {
             frmAddEditPerson frmEditPerson = new frmAddEditPerson();
             frmEditPerson.ShowDialog();
-            _RefreshPeopleList();
+            frmMangePeople_Load(null, null);
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddEditPerson editPerson = new frmAddEditPerson((int)dataGridView1.CurrentRow.Cells[0].Value);
             editPerson.ShowDialog();
-            _RefreshPeopleList();
+            frmMangePeople_Load(null, null);
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmPersonDetails frmPerson = new frmPersonDetails((int)dataGridView1.CurrentRow.Cells[0].Value);
             frmPerson.ShowDialog();
-            _RefreshPeopleList();
+            frmMangePeople_Load(null, null);
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddEditPerson frmEditPerson = new frmAddEditPerson();
             frmEditPerson.ShowDialog();
-            _RefreshPeopleList();
+            frmMangePeople_Load(null, null);
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,7 +117,7 @@ namespace DrivingLicenseManagement
                 if (clsPerson.DeletePersonByID((int)dataGridView1.CurrentRow.Cells[0].Value))
                 {
                     MessageBox.Show("Person Deleted successfully", "successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _RefreshPeopleList();
+                    frmMangePeople_Load(null, null);
                 }
                 else
                 {
@@ -135,6 +138,7 @@ namespace DrivingLicenseManagement
 
         private void frmMangePeople_Load(object sender, EventArgs e)
         {
+            _dtPeople = GetPeopleData();
             dataGridView1.DataSource = _dtPeople;
             comboboxFilterBy.SelectedIndex = 0;
             lbRecords.Text = dataGridView1.Rows.Count.ToString();
@@ -191,5 +195,6 @@ namespace DrivingLicenseManagement
             if (comboboxFilterBy.SelectedItem?.ToString() == "PersonID")
                 e.Handled = (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back);
         }
+
     }
 }

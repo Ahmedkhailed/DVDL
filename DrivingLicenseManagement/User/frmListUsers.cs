@@ -23,6 +23,7 @@ namespace DrivingLicenseManagement
 
         private void frmAddNewUser_Load(object sender, EventArgs e)
         {
+            _dtUser = clsUsers.GetAllUsers();
             dataGridView1.DataSource = _dtUser;
             comboboxFilterBy.SelectedIndex = 0;
             lbRecords.Text = dataGridView1.RowCount.ToString();
@@ -135,13 +136,14 @@ namespace DrivingLicenseManagement
         {
             FormAddNewUser AddNewUser = new FormAddNewUser();
             AddNewUser.ShowDialog();
-            _RefreshPeopleList();
+            frmAddNewUser_Load(null, null);
         }
 
         private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAddNewUser AddNewUser = new FormAddNewUser();
             AddNewUser.ShowDialog();
+            frmAddNewUser_Load(null, null);
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,7 +151,7 @@ namespace DrivingLicenseManagement
             if (clsUsers.DeleteUser((int)dataGridView1.CurrentRow.Cells[0].Value))
             {
                 MessageBox.Show("User has been deleted successfully.", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _RefreshPeopleList();
+                frmAddNewUser_Load(null, null);
             }
             else
                 MessageBox.Show("User is not deleted due to data connected to it.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -171,19 +173,20 @@ namespace DrivingLicenseManagement
         {
             FormAddNewUser EditNewUser = new FormAddNewUser((int)dataGridView1.CurrentRow.Cells["UserID"].Value);
             EditNewUser.ShowDialog();
-            _RefreshPeopleList();
+            frmAddNewUser_Load(null, null);
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             frmChangePassword changePassword = new frmChangePassword(clsGlobal.CurrentUser.UserID);
-            changePassword.ShowDialog();
+            frmAddNewUser_Load(null, null);
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUserInfo userInfo = new frmUserInfo((int)dataGridView1.CurrentRow.Cells[0].Value);
             userInfo.ShowDialog();
+            frmAddNewUser_Load(null, null);
         }
     
     }

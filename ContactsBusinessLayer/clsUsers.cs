@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using ContactsDataAccessLayer;
 using ContactsDataAccessLayer.User;
+using System.Security.Cryptography;
 
 namespace ContactsBusinessLayer.Users
 {
@@ -50,10 +51,24 @@ namespace ContactsBusinessLayer.Users
                 _Mode = enMode.Update;
         }
 
-        private bool _UpdateUser() => clsUserData.UpdateUser(UserID, PersonID, UserName, Password, IsActive);
+        static private string ComputeHash(string input)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                return BitConverter.ToString(bytes);
+            }
+        }
+
+        private bool _UpdateUser()
+        {
+            Password = ComputeHash(Password);
+            return clsUserData.UpdateUser(UserID, PersonID, UserName, Password, IsActive);
+        }
 
         private bool _AddNewUser()
         {
+            Password = ComputeHash(Password);
             this.UserID = clsUserData.AddNewUser(PersonID, UserName, Password, IsActive);
             return (this.UserID != -1);
         }
@@ -93,7 +108,7 @@ namespace ContactsBusinessLayer.Users
             int UserID = -1;
             int PersonID = -1;
             bool IsActive = false;
-
+            Password = ComputeHash(Password);
             if (clsUserData.GetUserByUserNameAndPassword(UserName, Password, ref UserID, ref PersonID, ref IsActive))
                 return new clsUsers(UserID, PersonID, UserName, Password, IsActive);
             else
@@ -117,7 +132,16 @@ namespace ContactsBusinessLayer.Users
 
         public static bool IsUserExistForPersonID(int PersonID) => clsUserData.IsUserExistForPersonID(PersonID);
 
-        public bool ChangePassword(string OldPassword, string NewPassword) => clsUserData.ChangePassword(this.UserID, OldPassword, NewPassword);
+        public bool ChangePassword(string OldPassword, string NewPassword)
+        {
+            if (ComputeHash(OldPassword) == this.Password)
+            {
+                Password = NewPassword;
+                return Save();
+            }
+            else
+                return false;
+        }
 
     }
 }

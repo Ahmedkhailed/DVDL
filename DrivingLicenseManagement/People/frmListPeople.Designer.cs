@@ -96,7 +96,7 @@
             this.phoneToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 172);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 200);
             this.contextMenuStrip1.Tag = "";
             this.contextMenuStrip1.Text = "---";
             // 
@@ -104,20 +104,20 @@
             // 
             this.showDetilsToolStripMenuItem.Image = global::DrivingLicenseManagement.Properties.Resources.cv;
             this.showDetilsToolStripMenuItem.Name = "showDetilsToolStripMenuItem";
-            this.showDetilsToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.showDetilsToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.showDetilsToolStripMenuItem.Text = "Show Details";
             this.showDetilsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(188, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(211, 6);
             // 
             // addNewPersonToolStripMenuItem
             // 
             this.addNewPersonToolStripMenuItem.Image = global::DrivingLicenseManagement.Properties.Resources.new_user;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.addNewPersonToolStripMenuItem.Text = "Add New Person";
             this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewPersonToolStripMenuItem_Click);
             // 
@@ -125,7 +125,7 @@
             // 
             this.editToolStripMenuItem.Image = global::DrivingLicenseManagement.Properties.Resources.user_edit;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -133,20 +133,20 @@
             // 
             this.DeleteToolStripMenuItem.Image = global::DrivingLicenseManagement.Properties.Resources.delete__1_;
             this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.DeleteToolStripMenuItem.Text = "Delete";
             this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(188, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(211, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = global::DrivingLicenseManagement.Properties.Resources.paper_plane;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.sendEmailToolStripMenuItem.Text = "Send Email";
             this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
@@ -154,7 +154,7 @@
             // 
             this.phoneToolStripMenuItem.Image = global::DrivingLicenseManagement.Properties.Resources.phone_call__1_;
             this.phoneToolStripMenuItem.Name = "phoneToolStripMenuItem";
-            this.phoneToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
+            this.phoneToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.phoneToolStripMenuItem.Text = "Phone Call";
             this.phoneToolStripMenuItem.Click += new System.EventHandler(this.phoneToolStripMenuItem_Click);
             // 

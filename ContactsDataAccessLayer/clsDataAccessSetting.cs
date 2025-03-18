@@ -8,7 +8,7 @@ using System.Configuration;
 namespace ContactsDataAccessLayer
 {
     static class clsDataAccessSetting
-    {
-        public static string ConnectionString = ConfigurationManager.ConnectionStrings["ContactsDB"].ConnectionString;
+        {
+            public static string ConnectionString = ConfigurationManager.ConnectionStrings["ContactsDB"].ConnectionString;
     }
 }

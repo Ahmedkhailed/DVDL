@@ -71,8 +71,6 @@ namespace DrivingLicenseManagement
 
             lbUserID.Text = _User.UserID.ToString();
             tbUserName.Text = _User.UserName.ToString();
-            tbPassword.Text = _User.Password.ToString();
-            tbConfirmPassword.Text = _User.Password.ToString();
             cbIsActive.Checked = _User.IsActive;
         }
 

@@ -161,8 +161,8 @@
         private System.Windows.Forms.Label lbPersonID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private AddEdit addEdit1;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private AddEdit addEdit1;
     }
 }

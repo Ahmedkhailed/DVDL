@@ -21,11 +21,15 @@ namespace DrivingLicenseManagement
 {
     public partial class AddEdit : UserControl
     {
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+        public event DataBackEventHandler DataBack;
+
+        
         public enum enMode { AddNew = 0, Update = 1 }
         private enMode _Mode;
 
         public int PersonID { get; set; }
-        public clsPerson Person;
+        public clsPerson Person = new clsPerson();
 
         public AddEdit()
         {
@@ -34,7 +38,10 @@ namespace DrivingLicenseManagement
 
         private bool _HandlePersonImage()
         {
-            if (Person.ImagePath == pbPerson.ImageLocation)
+            if (Person == null)
+                Person = new clsPerson();
+
+            if (Person.ImagePath != pbPerson.ImageLocation)
             {
                 if (Person.ImagePath != "")
                 {

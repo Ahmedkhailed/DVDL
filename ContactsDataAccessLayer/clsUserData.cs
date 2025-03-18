@@ -225,39 +225,6 @@ namespace ContactsDataAccessLayer.User
             return (RowsAffected > 0);
         }
 
-        public static bool ChangePassword(int UserID, string OldPassword, string NewPassword)
-        {
-            int RowsAffected = 0;
-
-            SqlConnection Connection = new SqlConnection(clsDataAccessSetting.ConnectionString);
-
-            string Query = @"UPDATE Users
-                               set Password = @NewPassword
-                         WHERE UserID = @UserID and Password = @OldPassword;";
-
-            SqlCommand command = new SqlCommand(Query, Connection);
-            command.Parameters.AddWithValue("@OldPassword", OldPassword);
-            command.Parameters.AddWithValue("@NewPassword", NewPassword);
-            command.Parameters.AddWithValue("@UserID", UserID);
-
-            try
-            {
-                Connection.Open();
-
-                RowsAffected = command.ExecuteNonQuery();
-            }
-            catch (Exception ex0)
-            {
-
-            }
-            finally
-            {
-                Connection.Close();
-            }
-
-            return (RowsAffected > 0);
-        }
-
         public static int AddNewUser(int PersonID, string UserName, string Password, bool IsActive)
         {
             int UserID = -1;

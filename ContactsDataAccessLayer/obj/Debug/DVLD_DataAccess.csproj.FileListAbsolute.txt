@@ -4,3 +4,4 @@ E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\DVLD_DataAccess.cs
 E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\DVLD_DataAccess.csproj.CoreCompileInputs.cache
 E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.dll
 E:\DrivingLicenseManagement\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.pdb
+E:\DrivingLicenseManagement\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.dll.config

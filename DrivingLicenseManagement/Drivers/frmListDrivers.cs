@@ -129,5 +129,6 @@ namespace DrivingLicenseManagement.Drivers
             frmLicenseHistory frm = new frmLicenseHistory((int)dataGridView1.CurrentRow.Cells["PersonID"].Value);
             frm.ShowDialog();
         }
+
     }
 }

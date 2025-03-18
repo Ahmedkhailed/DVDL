@@ -7,3 +7,4 @@ E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\DVLD_Buisness.csproj
 E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\DVLD_Bui.E5CEC4E3.Up2Date
 E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
 E:\DrivingLicenseManagement\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb
+E:\DrivingLicenseManagement\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.dll.config
